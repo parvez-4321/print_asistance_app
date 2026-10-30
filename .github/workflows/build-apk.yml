@@ -21,6 +21,9 @@ jobs:
           distribution: temurin
           java-version: '17'
 
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v3
+
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
@@ -30,7 +33,7 @@ jobs:
       - name: Install Android NDK
         run: |
           yes | sdkmanager --licenses
-          sdkmanager "ndk;30.0.16248370"
+          sdkmanager --install "ndk;30.0.16248370"
 
       - name: Get dependencies
         run: flutter pub get
