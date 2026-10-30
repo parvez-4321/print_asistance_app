@@ -23,6 +23,8 @@ jobs:
 
       - name: Set up Android SDK
         uses: android-actions/setup-android@v3
+        with:
+          packages: platform-tools
 
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
@@ -30,10 +32,16 @@ jobs:
           channel: stable
           cache: true
 
-      - name: Install Android NDK
+      - name: Install required Android NDK
         run: |
-          yes | sdkmanager --licenses
+          yes | sdkmanager --licenses || true
           sdkmanager --install "ndk;30.0.16248370"
+
+      - name: Verify toolchain
+        run: |
+          flutter --version
+          java -version
+          sdkmanager --list_installed
 
       - name: Get dependencies
         run: flutter pub get
@@ -43,6 +51,9 @@ jobs:
 
       - name: Build release APK
         run: flutter build apk --release
+
+      - name: Verify APK
+        run: test -s build/app/outputs/flutter-apk/app-release.apk
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
