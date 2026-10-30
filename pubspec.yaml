@@ -1,0 +1,68 @@
+name: print_assist_app
+description: Universal Printer App - Print, Scan, Copy from your phone with a liquid glass UI.
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.3.0 <4.0.0'
+  flutter: '>=3.22.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # State management
+  flutter_riverpod: ^2.5.1
+
+  # Navigation
+  go_router: ^14.2.7
+
+  # UI
+  flutter_animate: ^4.5.0
+  shimmer: ^3.0.0
+
+  # Printing
+  printing: ^5.13.1
+  pdf: ^3.11.1
+
+  # File & media
+  file_picker: ^8.1.2
+  image_picker: ^1.1.2
+  share_plus: ^10.0.2
+  path_provider: ^2.1.4
+  path: ^1.9.0
+
+  # Permissions
+  permission_handler: ^11.3.1
+
+  # Notifications
+  flutter_local_notifications: ^17.2.3
+
+  # Storage
+  shared_preferences: ^2.3.2
+
+  # Bluetooth
+  flutter_blue_plus: ^1.35.3
+
+  # Network / utilities
+  connectivity_plus: ^6.0.5
+  http: ^1.2.2
+
+  # Misc utilities
+  uuid: ^4.4.2
+  collection: ^1.18.0
+  equatable: ^2.0.5
+  intl: ^0.19.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/icons/
+    - assets/animations/
