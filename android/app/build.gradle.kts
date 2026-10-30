@@ -6,7 +6,7 @@ plugins {
 
 android {
     namespace = "com.printassist.print_assist_app"
-    compileSdk = flutter.compileSdkVersion
+    compileSdk = 36
     ndkVersion = "30.0.16248370"
 
     compileOptions {
