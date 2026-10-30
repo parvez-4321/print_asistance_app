@@ -26,7 +26,7 @@ dependencies:
   pdf: ^3.11.1
 
   # File & media
-  file_picker: ^10.3.11
+  file_picker: ^10.3.6
   image_picker: ^1.1.2
   share_plus: ^10.0.2
   path_provider: ^2.1.4
